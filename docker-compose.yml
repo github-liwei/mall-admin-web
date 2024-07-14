@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  #frontend
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8700:80"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 60M
+        reservations:
+          memory: 60M
